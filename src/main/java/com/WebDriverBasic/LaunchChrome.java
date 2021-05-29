@@ -13,5 +13,17 @@ public class LaunchChrome {
 
         // launch Browser
         driver = new ChromeDriver();
+
+        //Open test URL/site
+        driver.get("https://www.google.com");
+
+        // window maximizer
+        driver.manage().window().maximize();
+
+        //close active tab of browser
+        driver.close();
+        //close broswer with multiple tabs.
+        driver.quit();
+
     }
 }
