@@ -3,36 +3,32 @@ package com.WebDriverBasic;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.sql.Driver;
-
 public class TitleVerify {
     public static void main(String[] args) {
         //Implement WebDriver
-        WebDriver driver;
+        WebDriver driver; // WebDriver=Selenium Interface; driver=reference variable
 
-        //Set browser Driver Path
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Rahat\\Downloads\\Software Testing and QA\\Software required for Learning Test Automation\\WebDriver\\geckodriver.exe");
+        // Set browser Driver path
+        System.setProperty("webdriver.gecko.driver","F:\\Training\\PeopleNTech\\BITM Batch 2\\Files\\geckodriver.exe");
 
-        // launch Browser
-        driver = new FirefoxDriver();
+        // launch Real Browser
+        driver=new FirefoxDriver();
 
-        //Open test URL/site
+        //Open Test URL/Site
         driver.get("https://www.google.com");
 
-        String expectedTitle="Bangladesh";
-        String actualTitle= driver.getTitle();
-        System.out.println(actualTitle) ;
+        String expectedTitle="Google";
+        String actualTitle=driver.getTitle();
 
-        //Verify Title
+        // Verify
         if(actualTitle.equals(expectedTitle)){
-            System.out.println("Title Matched");
+            System.out.println("Title Matched.");
         }
         else{
-            System.out.println("Title not matched, Actual Title is:" +actualTitle+ ". Expected Title is:" +expectedTitle);
+            System.out.println("Title not match. Actual Title is: "+actualTitle+".Expected Title is: "+expectedTitle);
         }
 
-
-
+        driver.quit();
 
     }
 }

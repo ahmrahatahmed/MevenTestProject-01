@@ -3,15 +3,24 @@ package com.WebDriverBasic;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+// launch Browser
 public class LaunchFirefox {
     public static void main(String[] args) {
+
         //Implement WebDriver
-        WebDriver driver;
+        WebDriver driver; // WebDriver=Selenium Interface; driver=reference variable
 
-        //Set browser Driver Path
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Rahat\\Downloads\\Software Testing and QA\\Software required for Learning Test Automation\\WebDriver\\geckodriver.exe");
+        // Set browser Driver path
+        System.setProperty("webdriver.gecko.driver","F:\\Training\\PeopleNTech\\BITM Batch 2\\Files\\geckodriver.exe");
 
-        // launch Browser
-        driver = new FirefoxDriver();
+        // launch Real Browser
+        driver=new FirefoxDriver();
+
+        //Open Test URL/Site
+        driver.get("https://www.google.com");
+
+        driver.close(); // Active tab shut down
+
+      //  driver.quit(); // Shut down full browser.
     }
 }

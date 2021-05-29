@@ -2,35 +2,33 @@ package com.WebDriverBasic;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserSize {
     public static void main(String[] args) {
         //Implement WebDriver
-        WebDriver driver;
+        WebDriver driver; // WebDriver=Selenium Interface; driver=reference variable
 
-        //Set browser Driver Path
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Rahat\\Downloads\\Software Testing and QA\\Software required for Learning Test Automation\\WebDriver\\geckodriver.exe");
+        // Set browser Driver path
+        System.setProperty("webdriver.gecko.driver","F:\\Training\\PeopleNTech\\BITM Batch 2\\Files\\geckodriver.exe");
 
-        // launch Browser
-        driver = new FirefoxDriver();
+        // launch Real Browser
+        driver=new FirefoxDriver();
 
-        //Open test URL/site
+        //Open Test URL/Site
         driver.get("https://www.google.com");
 
-        //get browser size - size will be shown in console message
-        Dimension browserSize = driver.manage().window().getSize();
-        System.out.println("Maximum Browser Size: " +browserSize);
+        //Get Browser size
+        Dimension browserSize= driver.manage().window().getSize(); //(1382, 744)
+        System.out.println("Maximum Browser Size: "+browserSize);
 
-        // setBrowserSize
-        driver.manage().window().setSize(new Dimension(800,600));
-        Dimension customBrowserSize = driver.manage().window().getSize();
-        System.out.println("Custom Browser Size: " +customBrowserSize);
+        //Set Browser Size
+        driver.manage().window().setSize(new Dimension(800,400));
 
+        //Verify Set Size
+        Dimension customBrowserSize= driver.manage().window().getSize();
+        System.out.println("Custom Browser Size: "+customBrowserSize);
 
-        //driver.quit();
-
-
+       // driver.quit();
     }
 }

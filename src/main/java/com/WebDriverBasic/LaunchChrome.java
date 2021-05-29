@@ -1,29 +1,23 @@
 package com.WebDriverBasic;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+// launch Browser
 public class LaunchChrome {
     public static void main(String[] args) {
+
         //Implement WebDriver
-        WebDriver driver;
+        WebDriver driver; // WebDriver=Selenium Interface; driver=reference variable
 
-        //Set browser Driver Path
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Rahat\\Downloads\\Software Testing and QA\\Software required for Learning Test Automation\\WebDriver\\chromedriver.exe");
+        // Set browser Driver path
+        System.setProperty("webdriver.chrome.driver","F:\\Training\\PeopleNTech\\BITM Batch 2\\Files\\chromedriver.exe");
 
-        // launch Browser
-        driver = new ChromeDriver();
+        // launch Real Browser
+        driver=new ChromeDriver();
 
-        //Open test URL/site
-        driver.get("https://www.google.com");
-
-        // window maximizer
+        // Window Maximize
         driver.manage().window().maximize();
-
-        //close active tab of browser
-        driver.close();
-        //close broswer with multiple tabs.
-        driver.quit();
-
     }
 }
